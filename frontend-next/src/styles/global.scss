@@ -13,16 +13,6 @@ body,
   background: $background;
   color: $text;
 
-  .container {
-    height: 100%;
-    max-width: 992px;
-    margin: 0 auto;
-    padding: 2rem 2rem;
-
-    display: flex;
-    flex-direction: column;
-  }
-
   &, input, textarea, button {
     font: 400 1rem 'Inter', sans-serif;
   }
