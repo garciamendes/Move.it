@@ -1,6 +1,11 @@
 // React
 import { useState, useEffect } from 'react'
 
+// Third party
+import { FcApproval } from 'react-icons/fc'
+import { MdPlayArrow } from 'react-icons/md'
+import { IoMdClose } from 'react-icons/io'
+
 // Local
 import styles from '../styles/components/Countdown.module.scss'
 
@@ -8,7 +13,7 @@ import styles from '../styles/components/Countdown.module.scss'
 let countdownTimeout: NodeJS.Timeout
 
 export function Countdown() {
-  const [time, setTime] = useState(0.1 * 60)
+  const [time, setTime] = useState(.1 * 60)
   const [isActive, setIsActive] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
 
@@ -26,7 +31,7 @@ export function Countdown() {
   function resertCountdown() {
     clearTimeout(countdownTimeout)
     setIsActive(false)
-    setTime(0.1 * 60)
+    setTime(.1 * 60)
   }
 
   useEffect(() => {
@@ -58,8 +63,11 @@ export function Countdown() {
       {hasFinished ? (
         <button
           disabled
-          className={styles.countdownButton}>
+          className={styles.countdownButton}
+        >
           Ciclo encerrado
+          <FcApproval className={styles.iconApproval} size={25}/>
+
         </button>
       ) : (
           <>
@@ -68,8 +76,10 @@ export function Countdown() {
               <button
                 type='button'
                 className={`${styles.countdownButton} ${styles.countdownButtonActive}`}
-                onClick={resertCountdown}>
+                onClick={resertCountdown}
+              >
                 Abondonar ciclo
+                <IoMdClose size={25} className={styles.iconClose} />
               </button>
 
             ) : (
@@ -77,8 +87,10 @@ export function Countdown() {
                 <button
                   type='button'
                   className={styles.countdownButton}
-                  onClick={startCountdown}>
+                  onClick={startCountdown}
+                >
                   Iniciar um ciclo
+                  <MdPlayArrow color={'white'} size={25} className={styles.iconPlay}/>
                 </button>
               )
             }

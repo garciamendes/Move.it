@@ -65,7 +65,17 @@
   &:disabled {
     background: $white;
     color: $text;
+    border: none;
+    border-bottom: 4px solid $green;
     cursor: not-allowed;
+
+    .iconApproval {
+      margin-left: 1rem;
+    }
+  }
+
+  .iconPlay {
+    margin-left: .5rem;
   }
 }
 
@@ -78,5 +88,9 @@
   &:not(:disabled):hover {
     background: $red;
     color: $white;
+  }
+
+  .iconClose {
+    margin-left: .5rem;
   }
 }
