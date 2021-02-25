@@ -1,5 +1,5 @@
 // React
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 
 // Third party
 import { FcApproval } from 'react-icons/fc'
@@ -8,11 +8,14 @@ import { IoMdClose } from 'react-icons/io'
 
 // Local
 import styles from '../styles/components/Countdown.module.scss'
+import { ChallengesContext } from '../contexts/ChallengesContext'
 
 // javascript
 let countdownTimeout: NodeJS.Timeout
 
 export function Countdown() {
+  const { startNewChallenge } = useContext(ChallengesContext)
+
   const [time, setTime] = useState(.1 * 60)
   const [isActive, setIsActive] = useState(false)
   const [hasFinished, setHasFinished] = useState(false)
@@ -42,6 +45,7 @@ export function Countdown() {
     } else if (isActive && time == 0) {
       setHasFinished(true)
       setIsActive(false)
+      startNewChallenge()
     }
   }, [isActive, time])
 
