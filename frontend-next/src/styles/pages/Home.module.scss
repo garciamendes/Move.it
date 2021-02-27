@@ -18,3 +18,36 @@
     gap: 6.25rem;
   }
 }
+
+@media (max-width: 360px) {
+  .container {
+    padding: 1rem;
+
+    section {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 1rem;
+
+    section {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 1rem;
+
+    section {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
