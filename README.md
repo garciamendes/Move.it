@@ -19,3 +19,5 @@ Challenge of NLW, to reach the next level, in order to focus on the objectives a
 
 #### Running your project
 - In frontend-next run: ```yarn dev``` 
+
+```Ps: Have an experience with the application in production. Accessing this path:``` https://exeit.vercel.app/
