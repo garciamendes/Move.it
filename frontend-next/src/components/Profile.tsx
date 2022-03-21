@@ -12,7 +12,7 @@ export function Profile() {
     <div className={styles.profileContainer}>
       <img src="../../assets/images/no-image.png" alt="Garcia"/>
       <div>
-        <strong>Matheus Garcia</strong>
+        <strong>Usename</strong>
         <p>
           <img src="../../assets/icons/level.svg" alt="Level"/>
           Level {level}
